@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "full_name": "yusuf taskiran",
+      "user_name": "yusuf.taskiran",
+      "password": "12345",
+      "id": 1
+    }
+  ],
+  "information" : [
+    {
+      "plaka": "34 GP 345",
+      "gorevli": "Yusuf Taşkıran",
+      "Lokasyon" : "41.285,29.684"
+
+    },
+    {
+      "plaka": "34 GP 316",
+      "gorevli": "Cafer Güngören",
+      "Lokasyon" : "41.285,29.684"
+
+    },
+    {
+      "plaka": "34 RR 3145",
+      "gorevli": "Kıvanç Taşkıran",
+      "Lokasyon" : "41.285,29.684"
+
+    },
+    {
+      "plaka": "34 CE 3425",
+      "gorevli": "İbrahim Taşkıran",
+      "Lokasyon" : "41.285,29.684"
+
+    },
+    {
+      "plaka": "34 EE 1345",
+      "gorevli": "Yusuf Taşkıran",
+      "Lokasyon" : "41.285,29.684"
+
+    },
+    {
+      "plaka": "34 AA 345",
+      "gorevli": "Yusuf Taşkıran",
+      "Lokasyon" : "41.285,29.684"
+
+    }
+
+    
+  ]
+}
