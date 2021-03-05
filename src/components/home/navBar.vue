@@ -16,7 +16,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a href="/Login">
+      <a href="#" @click.prevent="logout" >
         <i
           style="color: #fff; font-size: 30px; margin-right: 20px"
           class="fas fa-sign-out-alt"
@@ -26,3 +26,13 @@
     </nav>
   </div>
 </template>
+<script>
+import { mapMutations } from "vuex";
+export default {
+  methods: {
+    ...mapMutations({
+      logout: "users/logout",
+    }),
+  },
+};
+</script>

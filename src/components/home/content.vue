@@ -11,24 +11,23 @@
         <div class="div">Lokasyon</div>
       </div>
       <ul
-        class="list-group list-group-flush"
+        class="list-group list-group-flush d-flex"
         style="width: auto; height: 200px; overflow: auto"
       >
-        <li class="list-group-item">{{ infos.plaka }}</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li
+          v-for="info in infos"
+          :key="info.id"
+          class="list-group-item justify-content-between align-items-center"
+        >
+          <span  style="float:left;">{{ info.plaka }} </span>
+          <span style="margin-left: 150px"> {{ info.gorevli }} </span>
+          <span style="float:right;"> {{ info.Lokasyon }} </span>
+        </li>
       </ul>
     </div>
+
     <div
-      v-if="isAuthenticated"
+      v-if="logsuccess"
       class="alert alert-success my-0 mx-0 d-flex justify-content-center align-items-center"
       role="alert"
     >
@@ -41,17 +40,30 @@ import { mapActions, mapGetters } from "vuex";
 import axios from "axios";
 
 export default {
-  
+  data() {
+    return {
+      logsuccess: false,
+    };
+  },
+  // methods: {
+  //   loginsucc() {
+  //     (this.logsuccess = true),
+  //       setTimeout(() => {
+  //         this.logsuccess = false;
+  //       }, 2000);
+  //     console.log("loginsucc :>> ", loginsucc);
+  //   },
+  // },
+
   computed: {
     ...mapGetters({
       isAuthenticated: "users/isAuthenticated",
-      infos : "users/info"
+      infos: "users/info",
     }),
-   
   },
-//   created() {
-//     this.$store.dispatch("info");
-//   },
+  created() {
+    this.$store.dispatch("users/info");
+  },
 };
 </script>
 <style>

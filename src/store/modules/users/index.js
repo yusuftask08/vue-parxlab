@@ -12,18 +12,20 @@ export default {
     mutations: {
         setUser(state, pUser) {
             state.user = pUser
-            state.info = pInfo
+
+        },
+        setInformation(state, pInfo) {
+            state.information = pInfo
         },
         logout(state) {
             state.user = null;
             localStorage.clear();
             router.push({
-                name: "Login"
+                name: "LoginPage"
             });
         },
-        setInformation(state, pInfo) {
-            state.information = pInfo;
-        }
+      
+
 
     },
     actions: {
@@ -49,20 +51,18 @@ export default {
                 router.push("/")
             });
         },
-        info({
-            commit
-        }) {
-            axios
+        info({commit}) {
+            appAxios
                 .get("/information")
                 .then(information_response => {
                     console.log("information_response ", information_response);
-
+                    commit("setInformation", information_response.data)
                 })
                 .catch(e => {
                     console.log("Error", e);
                 });
-            commit("setInformation", information_response.data || []);
         }
+
 
     },
     getters: {
