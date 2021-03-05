@@ -1,7 +1,7 @@
 <template >
   <div class="container loginPage">
     <div class="row mt-5">
-      <div class="col-4 offset-4">
+      <div class="col-md-6 offset-md-3">
         <div class="card">
           <div class="card-header text-center">
             <h1>ParxLab</h1>

@@ -42,10 +42,8 @@ export default {
             appAxios.get(`/users?user_name=${pUser.user_name}&password=${pUser.password}`).then(login_response => {
                 if (login_response?.status === 200 &&
                     login_response?.data?.length > 0) {
-                    alert("giriş başarılı")
 
-                } else {
-                    alert("Giriş başarısız") 
+
                 }
                 commit("setUser", login_response?.data[0]);
                 localStorage.user = JSON.stringify(login_response?.data[0]);
