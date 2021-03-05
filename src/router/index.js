@@ -38,7 +38,10 @@ router.beforeEach((to, from, next) => {
   let user = null;
   const authenticatedPages = ["Home"];
   // local storage üzerinde user varmı?
-  if (localStorage?.user) user = JSON.parse(localStorage?.user)
+  if (localStorage?.user) user = JSON.stringify(localStorage?.user)
+
+
+
   // localstorage üzerinde user varsa store u güncelle
   if (user !== null && typeof user === 'object') {
     store.commit("users/setUser", user)
