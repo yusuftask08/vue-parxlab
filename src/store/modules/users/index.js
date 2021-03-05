@@ -24,7 +24,7 @@ export default {
                 name: "LoginPage"
             });
         },
-      
+
 
 
     },
@@ -33,7 +33,6 @@ export default {
             commit
         }, pUser) {
             appAxios.post("/users", pUser).then(register_response => {
-                console.log('register :>> ', register_response);
                 commit("setUser", register_response);
             });
         },
@@ -41,28 +40,30 @@ export default {
             commit
         }, pUser) {
             appAxios.get(`/users?user_name=${pUser.user_name}&password=${pUser.password}`).then(login_response => {
-                console.log('login_response :>> ', login_response);
                 if (login_response?.status === 200 &&
                     login_response?.data?.length > 0) {
+                    alert("giriş başarılı")
 
+                } else {
+                    alert("Giriş başarısız") 
                 }
                 commit("setUser", login_response?.data[0]);
                 localStorage.user = JSON.stringify(login_response?.data[0]);
                 router.push("/")
             });
         },
-        info({commit}) {
+        info({
+            commit
+        }) {
             appAxios
                 .get("/information")
                 .then(information_response => {
-                    console.log("information_response ", information_response);
                     commit("setInformation", information_response.data)
                 })
                 .catch(e => {
                     console.log("Error", e);
                 });
         }
-
 
     },
     getters: {

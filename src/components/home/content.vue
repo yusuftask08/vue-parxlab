@@ -17,47 +17,21 @@
         <li
           v-for="info in infos"
           :key="info.id"
-          class="list-group-item justify-content-between align-items-center"
+          class="list-group-item d-flex justify-content-between align-items-center"
         >
-          <span  style="float:left;">{{ info.plaka }} </span>
-          <span style="margin-left: 150px"> {{ info.gorevli }} </span>
-          <span style="float:right;"> {{ info.Lokasyon }} </span>
+          <span style="float: left">{{ info.plaka }} </span>
+          <span> {{ info.gorevli }} </span>
+          <span style="float: right"> {{ info.Lokasyon }} </span>
         </li>
       </ul>
-    </div>
-
-    <div
-      v-if="logsuccess"
-      class="alert alert-success my-0 mx-0 d-flex justify-content-center align-items-center"
-      role="alert"
-    >
-      <strong>Giriş Başarılı</strong>
     </div>
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex";
-import axios from "axios";
-
+import { mapGetters } from "vuex";
 export default {
-  data() {
-    return {
-      logsuccess: false,
-    };
-  },
-  // methods: {
-  //   loginsucc() {
-  //     (this.logsuccess = true),
-  //       setTimeout(() => {
-  //         this.logsuccess = false;
-  //       }, 2000);
-  //     console.log("loginsucc :>> ", loginsucc);
-  //   },
-  // },
-
   computed: {
     ...mapGetters({
-      isAuthenticated: "users/isAuthenticated",
       infos: "users/info",
     }),
   },

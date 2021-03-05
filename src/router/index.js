@@ -49,10 +49,10 @@ router.beforeEach((to, from, next) => {
 
   // rules...
   //eğer giriş yapmamışsa ve user ile ilgili bölümlere sokma login sayfasına yönlendir
-  // if (!isAuthenticated && authenticatedPages.indexOf(to.name) > -1) next({
-  //   name: "Login"
-  // });
-  if (isAuthenticated && (to.name === "LoginPage" || to.name === "Register"))
+  if (!isAuthenticated && authenticatedPages.indexOf(to.name) > -1) next({
+    name: "LoginPage"
+  });
+  if (isAuthenticated && (to.name === "LoginPage" || to.name === "RegisterPage"))
     next({
       name: "Home"
     });

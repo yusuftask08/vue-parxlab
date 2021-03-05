@@ -34,23 +34,19 @@
                 <strong>Giriş Yap</strong>
               </button>
             </div>
-           
           </div>
-          <div class="card-footer text-center">
-            <router-link
-              to="/Register"
-              class="p-0 m-0 btn btn-link text-primary"
-            >
-              Üye değilim
-            </router-link>
-          </div>
+        </div>
+        <div class="card-footer text-center">
+          <router-link to="/Register" class="p-0 m-0 btn btn-link text-primary">
+            Üye değilim
+          </router-link>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -66,6 +62,5 @@ export default {
       login: "users/Loggin",
     }),
   },
- 
 };
 </script>

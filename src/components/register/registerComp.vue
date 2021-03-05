@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class="container loginPage">
     <div class="row mt-5">
       <div class="col-4 offset-4">
